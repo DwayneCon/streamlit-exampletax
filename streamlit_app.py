@@ -26,7 +26,7 @@ custom_css = """
 st.markdown(custom_css, unsafe_allow_html=True)
 
 # Set up OpenAI API
-openai.api_key = st.secrets["openai_api_key"]
+openai.api_key = st.secrets["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"]
 
 # Function to get response from OpenAI API
 def get_openai_response(user_input, message_history):
@@ -34,7 +34,7 @@ def get_openai_response(user_input, message_history):
     api_messages = [{"role": msg.split(': ')[0].lower(), "content": msg.split(': ')[1]} for msg in message_history]
 
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-0301",
+        model="gpt-4",
         messages=api_messages,
         max_tokens=200,
         temperature=0.1,
